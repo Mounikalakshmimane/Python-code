@@ -1,0 +1,95 @@
+Program-1
+
+n=int(input("enter"))
+for i in range(1,n+1):
+  if(i%3==0 and i%5==0):
+    print("FizzBuzz", end=" ")
+  elif(i%3==0):
+    print("Fizz", end=" ")
+  elif(i%5==0):
+    print("Buzz", end=" ")    
+  else:
+    print(i , end=" ")
+
+
+Program-2
+
+l1=[1,2,3,5,8,4,7,9,1,4,12,5,6,5,2,1,0,8,1]
+def m1(l1):
+  a={}
+  for i in l1:
+    if i in a:
+      a[i]=a[i]+1
+    else:
+      a[i]=1
+  a={k:v for k,v in a.items() if v>1}
+  return a
+a=m1(l1)
+for k,v in a.items():
+  print(k, "-", v)
+
+
+Program-3
+
+n=int(input("enter"))
+for i in range(1,n+1):
+  if(i%3==0 and i%5==0):
+    print("FizzBuzz", end=" ")
+  elif(i%3==0):
+    print("Fizz", end=" ")
+  elif(i%5==0):
+    print("Buzz", end=" ")    
+  else:
+    print(i , end=" ")
+
+
+Program-4
+
+n=int(input("enter the list:\n"))
+l=[]
+print("enter the values in list")
+for i in range(n):
+  l.append(int(input()))
+a=[]
+b=[]
+count=1
+flag=True
+for i in range(len(l)):
+    if l[i]%2!=0 and flag == True and count%6!=0:
+        a.append(l[i])
+        count+=1
+        flag=False
+    elif l[i]%2==0 and count%6!=0 and flag == True:
+        a.append(l[i])
+        count+=1
+        continue
+        flag=False
+    elif l[i]%2!=0 and flag == False and count%6!=0:
+        b.append(l[i])
+        count+=1
+        flag=True
+    elif l[i]%2==0 and flag == False and count%6!=0:
+      b.append(l[i])
+      count+=1
+      continue 
+      flag=True
+    else:
+      if count%6==0 and l[i]%2==0:
+        if flag==True:
+          a.append(l[i])
+          count+=1
+        else:
+          b.append(l[i])
+          flag=True
+          count+=1
+      elif count%6==0 and l[i]%2!=0:
+        if flag==True:
+          b.append(l[i])
+          count+=1     
+        else:
+          b.append(l[i])
+          count+=1
+
+print("Total=",sum(l))
+print("batsman_1 score= ",sum(a),"(",'+'.join(map(str, a)),")")
+print("batsman_2 score=",sum(b),"(",'+'.join(map(str, b)),")")
