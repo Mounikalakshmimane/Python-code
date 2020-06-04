@@ -31,16 +31,13 @@ for k,v in a.items():
 
 Program-3
 
-n=int(input("enter"))
-for i in range(1,n+1):
-  if(i%3==0 and i%5==0):
-    print("FizzBuzz", end=" ")
-  elif(i%3==0):
-    print("Fizz", end=" ")
-  elif(i%5==0):
-    print("Buzz", end=" ")    
-  else:
-    print(i , end=" ")
+n = int(input("enter a n value:"))
+d = {}
+for i in range(n):
+    keys = input() # here i have taken keys as strings
+    values = int(input()) # here i have taken values as
+    d[keys] = values
+print(sum(d.values()))
 
 
 Program-4
